@@ -24,3 +24,11 @@ Real-time fraud detection system with DDN Infinia as the centralized data hub fo
 ```bash
 git clone https://github.com/yourusername/ddn-infinia-fraud-detection-pipeline.git
 cd ddn-infinia-fraud-detection-pipeline
+
+## Quick Setup
+1. Clone repository
+2. Install requirements:
+3. Configure environment: Copy `config/config_template.env` to `.env`
+4. Start Kafka: `cd docker && docker-compose up -d`
+5. Run application: `python src/kafka_infinia_fraud_detection_pipeline.py`
+6. Access UI: http://localhost:7861
