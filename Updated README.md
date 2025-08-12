@@ -1,4 +1,5 @@
-# DDN Infinia Fraud Detection Pipeline
+# DDN Infinia Fraud Detection Pipeline - 
+Developed by Nasir Wasim Senior AI Solutions Architect
 
 Real-time fraud detection system with DDN Infinia as the centralized data hub for ML analytics, pattern analysis, and anomaly detection.
 
