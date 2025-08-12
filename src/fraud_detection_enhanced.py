@@ -1,25 +1,5 @@
 # Real-Time Fraud Detection Pipeline with Kafka Integration, DDN Infinia, and Grafana Cloud
 # DDN Infinia serves as the centralized data hub for ML analytics, pattern analysis, and anomaly detection
-
-# Activate new environment
-# conda activate kafka-pipeline
-
-# (kafka-pipeline) nwasim@DDN12552M python-pipeline %
-
-# Start everything
-# docker-compose up -d
-
-# Stop everything  
-# docker-compose down
-
-# See what's running
-# docker-compose ps
-
-# View logs
-# docker-compose logs kafka
-
-# Set a different port
-# export GRADIO_SERVER_PORT=7862
 #-----------------------------------------------
 
 import json
@@ -1541,7 +1521,7 @@ def format_search_analytics(analytics):
     if not analytics:
         return "No analytics available"
     
-    formatted = f"""📊 **Search Analytics Summary:**
+    formatted = f""" **Search Analytics Summary:**
 
 **Transaction Overview:**
 • Total Transactions: {analytics['total_transactions']:,}
@@ -2286,9 +2266,9 @@ def create_gradio_interface():
                                 cat = f.get('category', 'unknown')
                                 categories[cat] = categories.get(cat, 0) + 1
                             
-                            metrics += f"💾 **Total Data Size:** {total_size/1024:.1f} KB\n"
-                            metrics += f"📊 **Avg File Size:** {total_size/len(files)/1024:.1f} KB\n"
-                            metrics += f"📈 **Data Categories:** {len(categories)}\n"
+                            metrics += f" **Total Data Size:** {total_size/1024:.1f} KB\n"
+                            metrics += f" **Avg File Size:** {total_size/len(files)/1024:.1f} KB\n"
+                            metrics += f" **Data Categories:** {len(categories)}\n"
                             
                             for cat, count in categories.items():
                                 emoji = "🔴" if "high" in cat else "🟡" if "medium" in cat else "🟢" if "low" in cat else "📊"
@@ -2297,7 +2277,7 @@ def create_gradio_interface():
                         metrics += f"\n📊 **Grafana Monitoring:**\n"
                         metrics += f"🌐 **Instance:** {grafana_config['grafana_url'].split('/')[-1] if 'grafana.net' in grafana_config['grafana_url'] else 'Not Configured'}\n"
                         metrics += f"🔑 **Status:** {'✅ Connected' if grafana_config['api_key'] != 'Not Set' else '❌ Not Configured'}\n"
-                        metrics += f"📊 **Live Metrics:** {'🟢 Active' if metrics_collector.is_running else '🔴 Inactive'}\n"
+                        metrics += f" **Live Metrics:** {'🟢 Active' if metrics_collector.is_running else '🔴 Inactive'}\n"
                         
                         metrics += f"\n🔍 **Metadata Search Capabilities:**\n"
                         metrics += f"• Advanced transaction filtering\n"
